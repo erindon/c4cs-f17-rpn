@@ -8,8 +8,13 @@ def calculate(myarg):
 			arg2 = stack.pop()
 			result = arg1+arg2
 			stack.append(result)
+		elif token == '-':
+			arg1 = stack.pop()
+			arg2 = stack.pop()
+			result = arg2 - arg1
+			stack.append(result)
 		else:
-			stack.append(token)
+			stack.append(int(token))
 	print(stack)
 	return stack.pop()
 def main():
