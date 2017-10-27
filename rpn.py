@@ -15,16 +15,17 @@ ops = {
 def calculate(myarg):
 	stack = list()
 	for token in myarg.split():
-	        try:
+		try:
                         stack.append(int(token))
-                except ValueError:
+		except ValueError:
                         arg1 = stack.pop()
                         arg2 = stack.pop()
                         function = ops[token]
-                        result =  function(arg1, arg2)
+                        result =  function(arg2, arg1)
                         stack.append(result)
 #	print(stack)
 	return stack.pop()
+
 def main():
     while True:
         calculate(input("rpn calc> "))
